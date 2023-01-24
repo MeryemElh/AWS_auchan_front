@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="style.css" rel="stylesheet"/>
+    <title>DataViz</title>
+  </head>
+  <body>
+    <div class="title">
+      <p>Auchan Analytics</p>
+    </div>
+    <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
+    <div class="row">
+      <div class="bars">
+          <p class="subtitle">Chart:</p>
+          <canvas  id="chart1"></canvas>
+      </div>
+      <div class="pie">
+        <div>
+          <p class="subtitle">Chart:</p>
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="polar">
+        <div>
+          <p class="subtitle">Chart:</p>
+          <canvas id="chart4"></canvas>
+        </div>
+      </div>
+      <div class="radar">
+        <div>
+          <p class="subtitle">Chart:</p>
+          <canvas id="chart3"></canvas>
+        </div>
+      </div>
+      <div class="numbers">
+        <div>
+          <p class="subtitle">Total of products:</p>
+          <h1 class="number" id="number1">100</h1>
+          <p class="subtitle">Total of available:</p>
+          <h1 class="number" id="Number2">100</h1>
+          <p class="subtitle">Average price:</p>
+          <h1 class="number" id="number3">100</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script type="module" src="dimensions.js"></script> -->
+    <script type="module" src="acquisitions.js"></script>
+  </body>
+</html>

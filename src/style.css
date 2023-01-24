@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+body{
+    display: flex; 
+    flex-direction: column;
+}
+.title{
+    background-color: #003153;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    height: 70px;
+}
+p{
+    font-size: 1.75em;
+    font-weight: bolder;
+    color: #fff;
+    margin-left: 10px;
+}
+.subtitle{
+    color: #515050;
+    font-size: 1.75em;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.bars{
+    margin-left: 30px;
+    border-radius: 1%;
+    width: 53%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 235, 235);
+}
+
+.pie{
+    margin-left: 20px;
+    border-radius: 1%;
+    width: 41%;
+    display: flex;
+    background: rgb(235, 235, 235);
+}
+
+.radar{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 1%;
+    width: 40%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 235, 235);
+}
+
+.polar{
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    border-radius: 1%;
+    width: 30%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 235, 235);
+}
+
+.numbers{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border-radius: 1%;
+    width: 22.5%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: rgb(235, 235, 235);
+}
+.number{
+    color: #37D5D6;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-family: "Roboto Mono", sans-serif;
+    margin-left: 110px;
+    justify-content: center;
+    font-size: 2.5em;
+}
+#chart1{
+    width: 650px !important;
+    height: 350px !important;
+}
+#chart2{
+    justify-content: center;
+    margin-left: 100px;
+}
+#chart3{
+    width: 350px !important;
+    height: 350px !important;
+    justify-content: center;
+    margin-left: 100px;
+}
+
