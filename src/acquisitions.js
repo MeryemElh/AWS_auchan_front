@@ -1,14 +1,13 @@
 import Chart from 'chart.js/auto'
 
 (async function() {
-  
-  const backend_host = "http://localhost:8000/"
+  const backend_host = "http://auchan-web-tier-lb-1462683266.eu-west-3.elb.amazonaws.com:8000/"
 
   var chart1_data = []
   fetch(backend_host+"getChart1Data")
   .then((response) => response.json())
   .then((json) => {
-    createChart1(json)
+    createChart1(json);
   });
 
  function createChart1(json){
@@ -74,12 +73,12 @@ import Chart from 'chart.js/auto'
 
  function getvalues(cat){
   var tab =[]
-  tab.append(cat.nbr_prod);
-  tab.append(cat.max);
-  tab.append(cat.min);
-  tab.append(cat.mean);
-  tab.append(cat.nbr_avail);
-  tab.append(cat.mean_rating);
+  tab.push(cat.nbr_prod);
+  tab.push(cat.max);
+  tab.push(cat.min);
+  tab.push(cat.mean);
+  tab.push(cat.nbr_avail);
+  tab.push(cat.mean_rating);
  }
  function createChart3(json){
   chart3_data = json;
@@ -163,21 +162,30 @@ import Chart from 'chart.js/auto'
  }
 
  var nbr = "";
-fetch(backend_host+"getNbr")
- .then((response) => {nbr = response} );
+fetch(backend_host+"getNumber1")
+ .then((response) => response.text())
+ .then((text) => {
   number1 = document.getElementById("number1");
- number1.innerHTML= nbr;
+  number1.innerHTML = text;
+ });
+
 
  var nbr_avail = "";
- fetch(backend_host+"getNbrAvail")
- .then((response) => { nbr_avail = response} );
-  number2 = document.getElementById("number1");
- number2.innerHTML= nbr_avail;
+ fetch(backend_host+"getNumber2")
+ .then((response) => response.text())
+ .then((text) => {
+  number2 = document.getElementById("number2");
+  number2.innerHTML = text;
+ } );
+
 
  var av_price = "";
- fetch(backend_host+"getAvPrice")
- .then((response) => { av_price = response} );
-  number3 = document.getElementById("number1");
- number3.innerHTML= av_price;
+ fetch(backend_host+"getNumber3")
+ .then((response) => response.text())
+ .then((text) => {
+  number3 = document.getElementById("number3");
+  number3.innerHTML = text;
+ } );
+
 
 })();
