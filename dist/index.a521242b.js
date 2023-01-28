@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"a7oFG":[function(require,module,exports) {
+})({"f2ulR":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -561,7 +561,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _auto = require("chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
 (async function() {
-    const backend_host = "http://localhost:8000/";
+    const backend_host = "http://auchan-web-tier-lb-1462683266.eu-west-3.elb.amazonaws.com:8000/";
     var chart1_data = [];
     fetch(backend_host + "getChart1Data").then((response)=>response.json()).then((json)=>{
         createChart1(json);
@@ -598,12 +598,14 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
                 labels: chart2_data.map((row)=>row.category),
                 datasets: [
                     {
-                        label: "My First Dataset",
                         data: chart2_data.map((row)=>row.count),
                         backgroundColor: [
                             "#2a52be",
-                            "#0076CE",
-                            "#0a2351"
+                            "#4372AA",
+                            "#0a2351",
+                            "#00CED1",
+                            "#73C2FB",
+                            "#008ECC"
                         ],
                         hoverOffset: 4
                     }
@@ -613,16 +615,18 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
     }
     var chart3_data = [];
     fetch(backend_host + "getChart3Data").then((response)=>response.json()).then((json)=>{
+        chart3_data = json;
         createChart3(json);
     });
     function getvalues(cat) {
         var tab = [];
-        tab.append(cat.nbr_prod);
-        tab.append(cat.max);
-        tab.append(cat.min);
-        tab.append(cat.mean);
-        tab.append(cat.nbr_avail);
-        tab.append(cat.mean_rating);
+        tab.push(cat.nbr_prod);
+        tab.push(cat.max * 10);
+        tab.push(cat.min * 100);
+        tab.push(cat.mean * 100);
+        tab.push(cat.nbr_avail);
+        tab.push(cat.mean_rating * 100);
+        return tab;
     }
     function createChart3(json) {
         chart3_data = json;
@@ -684,14 +688,14 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
                 labels: chart4_data.map((row)=>row.category),
                 datasets: [
                     {
-                        label: "My First Dataset",
                         data: chart4_data.map((row)=>row.price),
                         backgroundColor: [
-                            "#2a52be",
-                            "#0076CE",
                             "#0a2351",
+                            "#2a52be",
                             "#00CED1",
-                            "#73C2FB"
+                            "#0076CE",
+                            "#73C2FB",
+                            "#008ECC"
                         ]
                     }
                 ]
@@ -699,23 +703,21 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
         });
     }
     var nbr = "";
-    fetch(backend_host + "getNbr").then((response)=>{
-        nbr = response;
+    fetch(backend_host + "getNumber1").then((response)=>response.text()).then((text)=>{
+        number1 = document.getElementById("number1");
+        number1.innerHTML = text;
     });
-    number1 = document.getElementById("number1");
-    number1.innerHTML = nbr;
     var nbr_avail = "";
-    fetch(backend_host + "getNbrAvail").then((response)=>{
-        nbr_avail = response;
+    fetch(backend_host + "getNumber2").then((response)=>response.text()).then((text)=>{
+        number2 = document.getElementById("number2");
+        number2.innerHTML = text;
     });
-    number2 = document.getElementById("number1");
-    number2.innerHTML = nbr_avail;
     var av_price = "";
-    fetch(backend_host + "getAvPrice").then((response)=>{
-        av_price = response;
+    fetch(backend_host + "getNumber3").then((response)=>response.text()).then((text)=>{
+        text = text.substring(0, 6);
+        number3 = document.getElementById("number3");
+        number3.innerHTML = text;
     });
-    number3 = document.getElementById("number1");
-    number3.innerHTML = av_price;
 })();
 
 },{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d8NN9":[function(require,module,exports) {
@@ -13920,6 +13922,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["a7oFG","7Jfkl"], "7Jfkl", "parcelRequirea722")
+},{}]},["f2ulR","7Jfkl"], "7Jfkl", "parcelRequirea722")
 
 //# sourceMappingURL=index.a521242b.js.map

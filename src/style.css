@@ -65,7 +65,6 @@ p{
     margin-bottom: 15px;
     border-radius: 1%;
     width: 30%;
-    justify-content: center;
     display: flex;
     flex-direction: column;
     background: rgb(235, 235, 235);
@@ -100,9 +99,11 @@ p{
     margin-left: 100px;
 }
 #chart3{
-    width: 350px !important;
-    height: 350px !important;
+    width: 420px !important;
+    height: 420px !important;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 30px;
 }
-
+#chart4{
+    margin-top: 20px;
+}

@@ -50,12 +50,14 @@ import Chart from 'chart.js/auto'
       data: {
         labels: chart2_data.map(row => row.category),
         datasets: [{
-          label: 'My First Dataset',
           data: chart2_data.map(row => row.count),
           backgroundColor: [
             '#2a52be',
-            '#0076CE',
-            '#0a2351'
+            '#4372AA',
+            '#0a2351',
+            '#00CED1',
+            '#73C2FB',
+            '#008ECC'
           ],
           hoverOffset: 4
         }]
@@ -68,17 +70,19 @@ import Chart from 'chart.js/auto'
  fetch(backend_host+"getChart3Data")
  .then((response) => response.json())
  .then((json) => {
+    chart3_data = json;
     createChart3(json)
  });
 
  function getvalues(cat){
   var tab =[]
   tab.push(cat.nbr_prod);
-  tab.push(cat.max);
-  tab.push(cat.min);
-  tab.push(cat.mean);
+  tab.push(cat.max*10);
+  tab.push(cat.min*100);
+  tab.push(cat.mean*100);
   tab.push(cat.nbr_avail);
-  tab.push(cat.mean_rating);
+  tab.push(cat.mean_rating*100);
+  return tab
  }
  function createChart3(json){
   chart3_data = json;
@@ -145,14 +149,14 @@ import Chart from 'chart.js/auto'
       data: {
         labels: chart4_data.map(row => row.category),
         datasets: [{
-          label: 'My First Dataset',
           data: chart4_data.map(row => row.price),
           backgroundColor: [
-            '#2a52be',
-            '#0076CE',
             '#0a2351',
+            '#2a52be',
             '#00CED1',
-            '#73C2FB'
+            '#0076CE',
+            '#73C2FB',
+            '#008ECC'
           ]
         }]
       
@@ -183,6 +187,7 @@ fetch(backend_host+"getNumber1")
  fetch(backend_host+"getNumber3")
  .then((response) => response.text())
  .then((text) => {
+  text = text.substring(0,6);
   number3 = document.getElementById("number3");
   number3.innerHTML = text;
  } );

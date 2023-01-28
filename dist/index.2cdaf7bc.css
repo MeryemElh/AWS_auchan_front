@@ -68,7 +68,6 @@ p {
   background: #ebebeb;
   border-radius: 1%;
   flex-direction: column;
-  justify-content: center;
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 30px;
@@ -108,9 +107,13 @@ p {
 
 #chart3 {
   justify-content: center;
-  margin-left: 100px;
-  width: 350px !important;
-  height: 350px !important;
+  margin-left: 30px;
+  width: 420px !important;
+  height: 420px !important;
+}
+
+#chart4 {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
